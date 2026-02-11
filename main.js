@@ -37,14 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
         audio.currentTime = 0; 
 
         videoCard.classList.remove("hide"); // Entfernt display: none
-    
-        // Sicherstellen, dass das Video geladen und abgespielt wird
-        video.muted = true; // Wichtig für Autoplay-Erlaubnis
-        video.play().then(() => {
-        console.log("Video spielt ab");
-    }).catch(error => {
-        console.log("Video-Fehler:", error);
-    });
+
+        // Video laut schalten und abspielen
+video.muted = false; 
+video.volume = 1.0; // Volle Lautstärke
+video.play().then(() => {
+    console.log("Video spielt mit Ton ab");
+}).catch(error => {
+    console.log("Video-Fehler:", error);
+});
 
         clickButton.style.display = "none";
         choiceBox.classList.remove("hide");
